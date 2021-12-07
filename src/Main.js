@@ -16,19 +16,33 @@ export default function Main() {
   const [qntCripto, setQuantidadeCripto] = useState();
   const [qntAcoes, setQuantidadeAcoes] = useState();
   const [qntFiis, setQuantidadeFiis] = useState();
+  const [closeChart, setCloseChart] = useState();
 
   useEffect(() => {
     let test = {};
     encontrarPorTipoResumido("acao").then((inv) => {
-      setQuantidadeAcoes(inv[0].qntTotal);
+      if (inv[0]) {
+        setQuantidadeAcoes(inv[0].qntTotal);
+      } else {
+        setCloseChart(true);
+      }
+
       console.log(inv[0]);
     });
-    encontrarPorTipoResumido("cripto").then((inv) =>
-      setQuantidadeCripto(inv[0].qntTotal)
-    );
-    encontrarPorTipoResumido("fii").then((inv) =>
-      setQuantidadeFiis(inv[0].qntTotal)
-    );
+    encontrarPorTipoResumido("cripto").then((inv) => {
+      if (inv[0]) {
+        setQuantidadeCripto(inv[0].qntTotal);
+      } else {
+        setCloseChart(true);
+      }
+    });
+    encontrarPorTipoResumido("fii").then((inv) => {
+      if (inv[0]) {
+        setQuantidadeFiis(inv[0].qntTotal);
+      } else {
+        setCloseChart(true);
+      }
+    });
     console.log("qntAcoes", qntAcoes);
     console.log("test", test);
   }, []);
@@ -152,7 +166,7 @@ export default function Main() {
             width: "100%",
           }}
         >
-          {getChart()}
+          {!closeChart && getChart()}
         </View>
         <View
           style={{
