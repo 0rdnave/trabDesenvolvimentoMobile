@@ -1,0 +1,103 @@
+<!-- 
+Faculdade de Tecnologia de Lins - Prof Antonio Seabra 
+Programação de Dispositivos Móveis
+Curso: Análise e Desenvolvimento de Sistemas
+Prof. Felipe Maciel - felipe.maciel@fateclins.edu.br
+ProgMobile - Trabalho Bimestral #2 [PERSISTÊNCIA LOCAL]
+
+[SOBRE O PROJETO] - Até 2 alunos
+
+Você foi contrato para desenvolver o aplicativo "MINHA CARTEIRA" que tem como objetivo permitir que usuário gerencie as ações de empresas que ele possui. O aplicativo DEVE ser desenvolvido utilizando persistência LOCAL.
+
+[x] Incluir
+[x] Ver
+[ ] editar
+[ ] excluir
+
+Funcionalidade 1 - Manter Ação (3 pontos)
+Descrição: Responsável por adicionar uma ação na carteira do usuário.
+Funcionamento: Deve possibilitar ao usuário incluir, ver, editar e excluir ações.  
+Campos: ticker (código da ação, ex: TRAD3, BCFF11), tipo de invesmentimento (acao, cripto, fiis), quantidade de ações, valor pago e data. 
+
+
+[ ] Vender Tudo
+[ ] Marcar como 'Vendida'
+[ ] Exibir data
+
+Funcionalidade 2 - Zerar Posição (1 ponto)
+Descrição: Responsável por "vender" TODAS as ações de uma empresa.
+Funcionamento: Dado que o usuário deseja se desfazer de uma ação(papel), o aplicativo deve pertimir que o usuário realize esta operação, porém a ação não deve ser totalmente excluída do aplicativo, ela (a ação) deverá ficar comquantidade 0 e marcada como vendida. Adicionalmente o aplicativo deve exibir a data quando a posição foi zerada.
+
+
+[!] Exibir apenas ação pesquisada
+
+Funcionalidade 3 - Filtrar Ações (1,5 pontos)
+Descrição: Responsável por exibir apenas as ações pesquisadas.
+Funcionamento: Por meio de um campo de busca, o aplicativo deve ser capaz de exibir apenas as ações que o usuário deseja ver.
+
+
+[ ] Exibir preço médio
+
+Funcionalidade 4 - Exibir Preço Médio (2 pontos)
+Descrição: Responsável por exibir o preço médio pago por cada ação.
+Funcionamento: Suponha que ONTEM você comprou 10 ações TRAD3 pagando um total de R$ 50,00, logo seu preço médio pago em CADA ação é de R$ 5,00. Porém HOJE você comprou mais 40 ações da TRAD3 pagando um total de R$ 240,00, desta maneira seu preço médio de compra é de R$ 5,80, ou seja, o preço_médio = total_pago / quantidade_ações, neste caso, 290/50.
+
+
+[ ] Exibir cotação atual
+[x] criar função para gerar cotação
+
+Funcionalidade 5 - Exibir Cotação Atual (0,5 ponto)
+Descrição: Responsável por exibir a cotação atual do papel.
+Funcionamento: Crie uma função que seja responsável por sortear um número aleatório entre 10 e 100, este valor aleatório será o valor atual de uma ação que será utilizado na Funcionalidade 6.
+
+
+[ ] Exibir lucro/prejuíso
+
+Funcionalidade 6 - Exibir Lucro/Prejuizo (2 pontos)
+Descrição: Responsável por exibir se o usuário está obtendo LUCRO/PREJUIZO em cada ação.
+Funcionamento: Dado que o usuário possui 50 ações da TRAD3 com preço médio R$ 5,80, caso HOJE a ação TRAD3 esteja com valor de R$ 6,80 (vide funcionalidade 5), o aplicativo deve exibir que o usuário está obetendo LUCRO de R$ 50,00.
+
+
+[ ] Exibir grafico
+[ ] Calcular porcentagens
+
+Funcionalidade EXTRA - Exibir Gráfico (1 ponto)
+Descrição: Responsável por exibir um gráfico contendo a % de R$ que ele possui em cada tipo de investimento (acoes, cripto, )
+Funcionamento: Utilizando alguma biblioteca js (exemplo charts.js) crie um gráfico que exiba a porcentagem que cada tipo de investimento representa na carteira do usuário. Ex: caso o usuário possua os seguintes valores em cada investimento
+
+ACOES  = R$ 500,00
+CRIPTO = R$ 250,00
+FIIS   = R% 750,00
+
+Logo, o gráfico deveria exibir ACOES 33,33%, CRIPTO 16,67% e FIIS 50%;
+
+
+[ ] Relatório
+
+[RELATÓRIO]
+Faça um pequeno relatório contendo quais funcionalidades foram implementadas e o que está ou não funcionando corretamente.
+
+[ENTREGA]
+Crie um diretório contendo o nome do grupo, ex Pedro_Maria_Joao, copie o projeto para dentro deste diretório e compacte o diretório Pedro_Maria_Joao.
+Apenas 1 aluno do grupo deve entregar o trabalho.
+
+********************************************************************************************
+-->
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">FELIPE MACIEL RODRIGUES</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">35258200.0000000</mso:Order>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">FELIPE MACIEL RODRIGUES</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:ContentTypeId msdt:dt="string">0x0101004DB1F9A846E8F649847642145682EE10</mso:ContentTypeId>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+  <title></title>
+</head>
